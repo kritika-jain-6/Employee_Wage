@@ -46,23 +46,8 @@ function calculateDailyWages() {
 
 //Use Case3 refactor the code and find the work hours 
 // Function to check attendance and calculate wages if present
-function checkAttendanceAndCalculateWages() {
-    let attendanceStatus = checkAttendance();
-    let dailyWages = 0;
-    let workedHours = 0;
+const result = calculateDailyWages()
 
-    if (attendanceStatus === "Present") {
-        let result = calculateDailyWages();
-        dailyWages = result.dailyWages;
-        workedHours = result.workedHours;
-    } else {
-        console.log("No wages as the employee is absent.");
-    }
-    return { workedHours, dailyWages}; // Return the calculated wages and hours
-}
 
-// Function call
-let result = checkAttendanceAndCalculateWages();
 console.log("Total worked hours: " + result.workedHours);
 console.log("Final wages: $" + result.dailyWages);
-
