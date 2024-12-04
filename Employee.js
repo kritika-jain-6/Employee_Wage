@@ -86,4 +86,5 @@ function maxWages(){
     }
   console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary,"and total days:",totalDays);
 }
+
 maxWages();
