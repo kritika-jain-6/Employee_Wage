@@ -46,9 +46,9 @@ function calculateDailyWages() {
 
 //Use Case3 refactor the code and find the work hours
 // Function to check attendance and calculate wages if present
-let result = calculateDailyWages();
+/*let result = calculateDailyWages();
 console.log("Total worked hours: " + result.workedHours);
-console.log("Final wages: $" + result.dailyWages);
+console.log("Final wages: $" + result.dailyWages);*/
 
 //Use case 4 using the for loop
 function monthlySalary() {
@@ -65,11 +65,25 @@ function monthlySalary() {
       Salary += result.dailyWages;
     }
   }
-  console.log(
-    "The Employee worked hours:",
-    totalHours,
-    "and montly salary:",
-    Salary
-  );
+  console.log("The Employee worked hours:", totalHours, "and montly salary:", Salary);
 }
-monthlySalary()
+//monthlySalary()
+//Use Case 5 using the while loopCalculate Wages till a condition of total working hours of 160 or max days of 20 is reached for a month
+ 
+function maxWages(){
+    let totalHours = 0;
+    let Salary = 0;
+    let totalDays = 0;
+
+    while (totalDays <20 && totalHours <160) {
+        let attendance = checkAttendance();
+        if (attendance) {
+        let result = calculateDailyWages();
+        totalDays++;
+        totalHours += result.workedHours;
+        Salary += result.dailyWages;
+        }
+    }
+  console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary,"and total days:",totalDays);
+}
+maxWages();
