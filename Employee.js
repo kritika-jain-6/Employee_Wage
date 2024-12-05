@@ -140,11 +140,22 @@ function calculateUsers(){
     for (let i=0;i<input;i++){
         const name=prompt("Enter the name of the Employee: ");
         const userdata=annualSalary();
-        usersdata.set(name,userdata)
-        
+        usersdata.set(name,userdata)        
     }
     return usersdata;
 }
-console.log(calculateUsers());
+//console.log(calculateUsers());
+//Use Case 8 in this we have to take the user name , month as input and get the data 
+function getdatauser(){
+    const users=calculateUsers();
+    const username=prompt("Enter the name of the employee you want : ");
+    const getmonth=prompt("Enter the month that you want to see: ");
+    const employe=users.get(username);
+    const monthdata=employe.find(data=>data.month===getmonth);
+    return monthdata;
+}
+console.log(getdatauser());
+
+
 
 
