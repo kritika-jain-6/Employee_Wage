@@ -31,6 +31,6 @@ The `maxWages` function calculates the total salary and hours worked by an emplo
 
 
 ## Use Case 6 - Employee Wages for a annual 
-### Date - 04-12-2024
+### Date - 05-12-2024
 
 The `annualSalary` function calculates the total salary and hours worked by an employee over a month and also annual salary . It tracks the number of days worked, total hours, and total salary earned.
