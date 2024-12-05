@@ -3,7 +3,7 @@ function checkAttendance() {
   // Generate the random number
   let employee = Math.random();
   // Check whether the employee is present or not
-  if (employee < 0.5) {
+  if (employee < 0.3) {
     //console.log("Absent");
     return "Absent";
   } else {
@@ -58,14 +58,14 @@ function monthlySalary() {
 
   for (let i = 0; i < 20; i++) {
     let attendance = checkAttendance();
-    if (attendance) {
+    if (attendance==="Present") {
       let result = calculateDailyWages();
       totalDays++;
       totalHours += result.workedHours;
       Salary += result.dailyWages;
     }
   }
-  console.log("The Employee worked hours:", totalHours, "and montly salary:", Salary);
+  console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary," and days:",totalDays);
 }
 //monthlySalary()
 //Use Case 5 using the while loopCalculate Wages till a condition of total working hours of 160 or max days of 20 is reached for a month
@@ -87,4 +87,17 @@ function maxWages(){
   console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary,"and total days:",totalDays);
 }
 
-maxWages();
+//maxWages();
+
+//Use case 6 where we have to find the employee annual salary for month wise.
+function annualSalary(){
+    let employee=[];
+    for (let i=1;i<=12;i++){
+        const salaryannual=monthlySalary();
+        employee.push(salaryannual);
+    }
+    return employee;    
+
+}
+annualSalary()
+
