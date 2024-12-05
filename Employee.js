@@ -1,3 +1,4 @@
+const prompt =require('prompt-sync')();
 // Use case 1 for Attendance Check
 function checkAttendance() {
   // Generate the random number
@@ -51,7 +52,7 @@ console.log("Total worked hours: " + result.workedHours);
 console.log("Final wages: $" + result.dailyWages);*/
 
 //Use case 4 using the for loop
-function monthlySalary() {
+function monthlySalary(month) {
   let totalHours = 0;
   let Salary = 0;
   let totalDays = 0;
@@ -65,7 +66,8 @@ function monthlySalary() {
       Salary += result.dailyWages;
     }
   }
-  console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary," and days:",totalDays);
+  //console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary," and days:",totalDays);
+  return { totalDays,totalHours,Salary,month}
 }
 //monthlySalary()
 //Use Case 5 using the while loopCalculate Wages till a condition of total working hours of 160 or max days of 20 is reached for a month
@@ -90,14 +92,59 @@ function maxWages(){
 //maxWages();
 
 //Use case 6 where we have to find the employee annual salary for month wise.
+function monthly(num){
+    switch(num){
+    case 1:
+        return "January";        
+    case 2:
+        return "February";
+    case 3:
+        return "March" ;  
+    case 4:
+        return "April";
+    case 5:
+        return "May" ;
+    case 6:
+        return "June";
+    case 7:
+        return "July" ;
+    case 8:
+        return "August" ;
+    case 9:
+        return "September";
+    case 10:
+        return "October" ;
+    case 11:
+        return "November" ;
+    case 12:
+        return "December" ;
+    default:
+        return "Invalid Output";
+    }
+}
 function annualSalary(){
     let employee=[];
     for (let i=1;i<=12;i++){
-        const salaryannual=monthlySalary();
+        const month=monthly(i);
+        const salaryannual=monthlySalary(month);
         employee.push(salaryannual);
     }
-    return employee;    
-
+    return employee;
 }
-annualSalary()
+
+//console.log(annualSalary());
+//Use Case 7 where we take the user input data and calculate their wages.
+function calculateUsers(){
+    const usersdata=new Map();
+    const input=parseInt(prompt("Enter the Employee number: "));
+    for (let i=0;i<input;i++){
+        const name=prompt("Enter the name of the Employee: ");
+        const userdata=annualSalary();
+        usersdata.set(name,userdata)
+        
+    }
+    return usersdata;
+}
+console.log(calculateUsers());
+
 
