@@ -43,3 +43,7 @@ The `calculateUsers` function calculates the total salary and hours worked by an
 
 ## Use Case 8 - Employee Wage taking the input from the user ,month and we are specifically find that month data from multiple users.
 ### Date - 05-12-2024
+
+
+## Use Case 8 - Employee Wage taking the input from the user ,month and we are specifically find that month data from multiple users with duplicate names.
+### Date - 06-12-2024

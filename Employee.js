@@ -86,7 +86,7 @@ function maxWages(){
         Salary += result.dailyWages;
         }
     }
-  console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary,"and total days:",totalDays);
+  //console.log("The Employee worked hours:", totalHours, ", montly salary:", Salary,"and total days:",totalDays);
 }
 
 //maxWages();
@@ -140,7 +140,12 @@ function calculateUsers(){
     for (let i=0;i<input;i++){
         const name=prompt("Enter the name of the Employee: ");
         const userdata=annualSalary();
-        usersdata.set(name,userdata)        
+        //usersdata.set(name,userdata)
+        if(!usersdata.has(name)){
+          usersdata.set(name,[]);
+        } 
+        usersdata.get(name).push(userdata);      
+
     }
     return usersdata;
 }
@@ -151,11 +156,22 @@ function getdatauser(){
     const username=prompt("Enter the name of the employee you want : ");
     const getmonth=prompt("Enter the month that you want to see: ");
     const employe=users.get(username);
-    const monthdata=employe.find(data=>data.month===getmonth);
+    //const monthdata=employe.find(data=>data.month===getmonth);
+    let monthdata;
+    if(employe.length===1){
+      monthdata=employe[0].find(data=>data.month===getmonth);
+    }
+    else{
+      for(let i=0;i<employe.length;i++){
+        console.log(`${i},${username}`);        
+      }
+      const inpt=parseInt(prompt("Select user: "));
+      monthdata=employe[inpt].find(data=>data.month===getmonth);
+    }
+
     return monthdata;
 }
 console.log(getdatauser());
-
 
 
 

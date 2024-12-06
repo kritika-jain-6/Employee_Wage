@@ -1,5 +1,15 @@
 {
   "dependencies": {
+    "filter": "^0.1.1",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "name": "employee_wage",
+  "version": "1.0.0",
+  "description": "The `checkAttendance` function uses the `Math.random()` function to generate a random attendance value between 0 and 1. The function then checks whether the attendance value is greater than 0.5, which corresponds to a 50% chance of the employee being present or absent.",
+  "main": "Employee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
